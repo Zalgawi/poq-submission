@@ -1,0 +1,88 @@
+@import '../../styles/partials/mixins';
+@import '../../styles/partials/variables';
+
+/* custom keyframes for animation */
+@keyframes color-pulse {
+    0% {
+        color: primary-text;
+    }
+    50% {
+        color: $poq-blue;
+    }
+    100% {
+        color: primary-text;
+    }
+}
+
+@keyframes shaking {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(5px, 5px) rotate(5deg);
+    }
+    50% {
+        transform: translate(0, 0) rotate(0eg);
+    }
+    75% {
+        transform: translate(-5px, 5px) rotate(-5deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+.home {
+    text-align: center;
+
+    &__title {
+        margin: 2rem 0 1rem;
+    }
+
+    &__img {
+        @include height-width(auto, 6rem);
+        margin-bottom: 2rem;
+        animation: shaking 3s infinite;
+    }
+
+    &__text {
+        margin-bottom: 4rem;
+        color: $secondary-text;
+    }
+
+    &__btn {
+        outline: none;
+        border: none;
+        border-radius: 0.8rem;
+        padding: 1rem;
+        background-color: $poq-blue;
+        color: $white-text;
+        font-size: 1.8rem;
+        animation: color-pulse 4s ease-in-out infinite;
+        cursor: pointer;
+
+        &:hover {
+            animation: none;
+        }
+    }
+}
+
+@include tablet {
+    .home {
+        &__title {
+            font-size: 2.5rem;
+        }
+
+        &__img {
+            @include height-width(auto, 10rem);
+        }
+
+        &__text {
+            font-size: 2rem;
+        }
+
+        &__btn {
+            font-size: 2rem;
+        }
+    }
+}
