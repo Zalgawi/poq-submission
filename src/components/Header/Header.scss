@@ -1,0 +1,91 @@
+@import '../../styles/partials/mixins';
+@import '../../styles/partials/variables';
+
+.header {
+    padding: 2rem 0;
+    border-bottom: 0.1rem solid $page-divide;
+
+    &__layer {
+        @include flex(space-between, center);
+        margin: 0 2rem;
+    }
+
+    &__logo {
+        display: none;
+    }
+
+    &__logo-img {
+        @include height-width(auto, 10rem);
+    }
+
+    .nav {
+        &__list {
+            text-decoration: none;
+            list-style-type: none;
+            @include flex(space-between, center);
+        }
+
+        &__list-item {
+            margin: 0 0.5rem;
+            cursor: pointer;
+        }
+    }
+}
+
+@include tablet {
+    .header {
+        &__layer {
+            margin: 0 5rem;
+        }
+
+        &__logo {
+            display: inline-block;
+            font-size: 2.5rem;
+        }
+
+        .nav {
+            &__list-item {
+                font-size: 2rem;
+                margin: 0 2rem;
+            }
+        }
+    }
+}
+
+@include desktop {
+    .header {
+        &__layer {
+            margin: 0 10rem;
+        }
+
+        &__logo {
+            font-size: 3rem;
+            transition: 0.2s ease-in-out;
+
+            &:hover {
+                color: $poq-blue;
+            }
+        }
+
+        .nav {
+            &__list-item {
+                font-size: 2.5rem;
+                margin: 0 2.5rem;
+
+                &:after {
+                    display: block;
+                    content: '';
+                    border-bottom: 0.2rem solid $poq-blue;
+                    transform: scaleX(0);
+                    transition: transform 0.3s ease-in-out;
+                    transform-origin: 50% 50%;
+                }
+
+                &:hover:after {
+                    transform: scaleX(1);
+                    transform-origin: 50% 50%;
+                }
+            }
+        }
+    }
+}
