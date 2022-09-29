@@ -1,0 +1,19 @@
+@import '../../styles/partials/mixins';
+@import '../../styles/partials/variables';
+
+.footer {
+    @include flex(center, center);
+    @include height-width(6rem, 100%);
+    position: absolute;
+    bottom: 0;
+    border-top: 0.1rem solid $page-divide;
+
+    &__text {
+        margin-right: 2rem;
+        font-size: 1.2rem;
+    }
+
+    &__img {
+        @include height-width(auto, 6rem);
+    }
+}
