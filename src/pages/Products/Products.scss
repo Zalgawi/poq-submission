@@ -1,0 +1,49 @@
+@import '../../styles/partials/mixins';
+@import '../../styles/partials/variables';
+
+.products {
+    margin: 0 2rem;
+    @include flex(space-between, center, column);
+}
+
+@include tablet {
+    .products {
+        margin: 0 5rem;
+
+        &__title {
+            font-size: 3rem;
+        }
+
+        &__list {
+            @include flex(space-evenly, center);
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.remove-button {
+    line-height: 50px;
+    padding: 0 35px 0 35px;
+    font-size: 15px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+
+    &.inverted {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+
+        &:hover {
+            background-color: black;
+            color: white;
+            border: none;
+            margin-bottom: 2px;
+        }
+    }
+}
