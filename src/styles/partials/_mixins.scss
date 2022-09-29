@@ -1,0 +1,25 @@
+/* Breakpoints */
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+
+/* other helpful mixins */
+@mixin flex($justify-content, $align-items, $flex-direction: row) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $flex-direction;
+}
+
+@mixin height-width($height, $width) {
+    height: $height;
+    width: $width;
+}
